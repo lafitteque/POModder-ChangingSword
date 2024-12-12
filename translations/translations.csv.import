@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://djqe2w2fkfxa1"
+
+[deps]
+
+files=["res://mods-unpacked/POModder-TutorialTemplate/translations/translations.en.translation", "res://mods-unpacked/POModder-TutorialTemplate/translations/translations.fr.translation", "res://mods-unpacked/POModder-TutorialTemplate/translations/translations.es.translation"]
+
+source_file="res://mods-unpacked/POModder-TutorialTemplate/translations/translations.csv"
+dest_files=["res://mods-unpacked/POModder-TutorialTemplate/translations/translations.en.translation", "res://mods-unpacked/POModder-TutorialTemplate/translations/translations.fr.translation", "res://mods-unpacked/POModder-TutorialTemplate/translations/translations.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0

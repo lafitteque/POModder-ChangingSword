@@ -1,0 +1,17 @@
+{
+	"name": "TutorialTemplate",
+	"namespace": "POModder",
+	"version_number": "0.1.0",
+	"description": "A template",
+	"website_url": "https://",
+	"dependencies": [],
+	"extra": {
+		"godot": {
+			"incompatibilities": [],
+			"authors": ["PO"],
+			"compatible_mod_loader_version": ["3.0.0"],
+			"compatible_game_version": ["4.2"],
+			"config_defaults": {}
+		}
+	}
+}
