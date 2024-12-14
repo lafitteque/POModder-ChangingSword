@@ -1,11 +1,11 @@
 extends Node
 
-const MYMODNAME_LOG = "POModder-TutorialTemplate"
-const MYMODNAME_MOD_DIR = "POModder-TutorialTemplate/"
+const MYMODNAME_LOG = "POModder-ChangingSword"
+const MYMODNAME_MOD_DIR = "POModder-ChangingSword/"
 
 var dir = ""
 var ext_dir = ""
-var trans_dir = "res://mods-unpacked/POModder-TutorialTemplate/translations/"
+var trans_dir = "res://mods-unpacked/POModder-ChangingSword/translations/"
 
 func _init():
 	ModLoaderLog.info("Init", MYMODNAME_LOG)
@@ -22,13 +22,13 @@ func _ready():
 	
 	StageManager.level_ready.connect(_on_level_ready)
 	
-	var pathToModYamlUpgrades = "res://mods-unpacked/POModder-TutorialTemplate/yaml/upgrades.yaml"
-	var pathToModYamlAssignments = "res://mods-unpacked/POModder-TutorialTemplate/yaml/assignments.yaml"
+	var pathToModYamlUpgrades = "res://mods-unpacked/POModder-ChangingSword/yaml/upgrades.yaml"
+	var pathToModYamlAssignments = "res://mods-unpacked/POModder-ChangingSword/yaml/assignments.yaml"
 	
 	Data.parseAssignmentYaml(pathToModYamlAssignments)
 	Data.parseUpgradesYaml(pathToModYamlUpgrades)	
 	
-	ModLoaderMod.install_script_extension("res://mods-unpacked/POModder-TutorialTemplate/extensions/Sword.gd")
+	ModLoaderMod.install_script_extension("res://mods-unpacked/POModder-ChangingSword/extensions/Sword.gd")
 	
 func modInit():
 	print("Test : Mod initialized")
