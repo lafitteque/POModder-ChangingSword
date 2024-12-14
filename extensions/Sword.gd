@@ -10,11 +10,18 @@ var wait_listen_count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if ! "worldmodifierchangingsword" in Level.loadout.modeConfig.get(CONST.MODE_CONFIG_WORLDMODIFIERS, []):
+		return
 	Data.listen(self, "sword.stabDamage")
 	Data.listen(self, "sword.sliceDamage")
 	change_scale()
 
 func propertyChanged(property : String, old_value, new_value):
+	super(property,old_value,new_value)
+	
+	if ! "worldmodifierchangingsword" in Level.loadout.modeConfig.get(CONST.MODE_CONFIG_WORLDMODIFIERS, []):
+		return
+		
 	if property == "sword.stabDamage":
 		base_damage_stab = new_value
 	elif property == "sword.sliceDamage":
@@ -22,17 +29,21 @@ func propertyChanged(property : String, old_value, new_value):
 	apply_damage_changes()
 		
 func _physics_process(delta):
-	if hitMonsters.size() > 0 and current_scale > 0.4:
-		current_scale = max(current_scale - 0.1,0.4)
-		change_scale()
-		apply_damage_changes()
-	if current_scale < 3.0 and ! GameWorld.paused:
-		cooldown_until_scale_up -= delta
-		if cooldown_until_scale_up < 0 :
-			current_scale += 0.2
-			cooldown_until_scale_up = scale_up_time
+	
+	if "worldmodifierchangingsword" in Level.loadout.modeConfig.get(CONST.MODE_CONFIG_WORLDMODIFIERS, []):
+		
+		if hitMonsters.size() > 0 and current_scale > 0.4:
+			current_scale = max(current_scale - 0.2,0.4)
 			change_scale()
 			apply_damage_changes()
+		if current_scale < 3.0 and ! GameWorld.paused:
+			cooldown_until_scale_up -= delta
+			if cooldown_until_scale_up < 0 :
+				current_scale += 0.2
+				cooldown_until_scale_up = scale_up_time
+				change_scale()
+				apply_damage_changes()
+				
 	super(delta)
 
 func change_scale():

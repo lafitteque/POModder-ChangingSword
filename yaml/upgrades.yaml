@@ -1,0 +1,7 @@
+worldmodifierchangingsword:
+  type: worldmodifier
+
+worldmodifier123:
+  type: worldmodifier
+  propertyChanges:
+    - monstermodifiers.punishers = false

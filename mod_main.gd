@@ -22,12 +22,12 @@ func _ready():
 	
 	StageManager.level_ready.connect(_on_level_ready)
 	
-	#var pathToModYamlUpgrades = "res://mods-unpacked/POModder-TutorialTemplate/yaml/upgrades.yaml"
-	#var pathToModYamlAssignments = "res://mods-unpacked/POModder-TutorialTemplate/yaml/assignments.yaml"
+	var pathToModYamlUpgrades = "res://mods-unpacked/POModder-TutorialTemplate/yaml/upgrades.yaml"
+	var pathToModYamlAssignments = "res://mods-unpacked/POModder-TutorialTemplate/yaml/assignments.yaml"
 	
-	#Data.parseAssignmentYaml(pathToModYamlAssignments)
-	#Data.parseUpgradesYaml(pathToModYamlUpgrades)	
-
+	Data.parseAssignmentYaml(pathToModYamlAssignments)
+	Data.parseUpgradesYaml(pathToModYamlUpgrades)	
+	
 	ModLoaderMod.install_script_extension("res://mods-unpacked/POModder-TutorialTemplate/extensions/Sword.gd")
 	
 func modInit():

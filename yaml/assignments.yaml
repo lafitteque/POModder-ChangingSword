@@ -1,0 +1,11 @@
+changingsword:
+  tier: 0
+  goaltype: relic
+  upgradeLimits: hostile
+  freegadgets: 1
+  mapArchetype: regular-medium
+  worldModifiers: worldmodifierchangingsword
+  challengePropertyChanges:
+    - monstermodifiers.totalrunweightmodifier = 2.0
+    - monsters.additionalwaveweight = 20
+    - monsters.minimumtimebetweenmonsters = 0.08
